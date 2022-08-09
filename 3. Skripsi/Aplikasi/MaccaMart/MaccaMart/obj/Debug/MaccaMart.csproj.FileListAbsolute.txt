@@ -1,13 +1,6 @@
 D:\File\Skripsi\3. Skripsi\Aplikasi\MaccaMart\MaccaMart\bin\Debug\MaccaMart.exe.config
 D:\File\Skripsi\3. Skripsi\Aplikasi\MaccaMart\MaccaMart\bin\Debug\MaccaMart.exe
 D:\File\Skripsi\3. Skripsi\Aplikasi\MaccaMart\MaccaMart\bin\Debug\MaccaMart.pdb
-D:\File\Skripsi\3. Skripsi\Aplikasi\MaccaMart\MaccaMart\obj\Debug\MaccaMart.csproj.AssemblyReference.cache
-D:\File\Skripsi\3. Skripsi\Aplikasi\MaccaMart\MaccaMart\obj\Debug\MaccaMart.Form1.resources
-D:\File\Skripsi\3. Skripsi\Aplikasi\MaccaMart\MaccaMart\obj\Debug\MaccaMart.Properties.Resources.resources
-D:\File\Skripsi\3. Skripsi\Aplikasi\MaccaMart\MaccaMart\obj\Debug\MaccaMart.csproj.GenerateResource.cache
-D:\File\Skripsi\3. Skripsi\Aplikasi\MaccaMart\MaccaMart\obj\Debug\MaccaMart.csproj.CoreCompileInputs.cache
-D:\File\Skripsi\3. Skripsi\Aplikasi\MaccaMart\MaccaMart\obj\Debug\MaccaMart.exe
-D:\File\Skripsi\3. Skripsi\Aplikasi\MaccaMart\MaccaMart\obj\Debug\MaccaMart.pdb
 D:\File\Skripsi\3. Skripsi\Aplikasi\MaccaMart\MaccaMart\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
 D:\File\Skripsi\3. Skripsi\Aplikasi\MaccaMart\MaccaMart\bin\Debug\Microsoft.Bcl.HashCode.dll
 D:\File\Skripsi\3. Skripsi\Aplikasi\MaccaMart\MaccaMart\bin\Debug\Npgsql.dll
@@ -36,4 +29,11 @@ D:\File\Skripsi\3. Skripsi\Aplikasi\MaccaMart\MaccaMart\bin\Debug\System.Text.Js
 D:\File\Skripsi\3. Skripsi\Aplikasi\MaccaMart\MaccaMart\bin\Debug\System.Threading.Channels.xml
 D:\File\Skripsi\3. Skripsi\Aplikasi\MaccaMart\MaccaMart\bin\Debug\System.Threading.Tasks.Extensions.xml
 D:\File\Skripsi\3. Skripsi\Aplikasi\MaccaMart\MaccaMart\bin\Debug\System.ValueTuple.xml
+D:\File\Skripsi\3. Skripsi\Aplikasi\MaccaMart\MaccaMart\obj\Debug\MaccaMart.csproj.AssemblyReference.cache
+D:\File\Skripsi\3. Skripsi\Aplikasi\MaccaMart\MaccaMart\obj\Debug\MaccaMart.Form1.resources
+D:\File\Skripsi\3. Skripsi\Aplikasi\MaccaMart\MaccaMart\obj\Debug\MaccaMart.Properties.Resources.resources
+D:\File\Skripsi\3. Skripsi\Aplikasi\MaccaMart\MaccaMart\obj\Debug\MaccaMart.csproj.GenerateResource.cache
+D:\File\Skripsi\3. Skripsi\Aplikasi\MaccaMart\MaccaMart\obj\Debug\MaccaMart.csproj.CoreCompileInputs.cache
 D:\File\Skripsi\3. Skripsi\Aplikasi\MaccaMart\MaccaMart\obj\Debug\MaccaMart.csproj.CopyComplete
+D:\File\Skripsi\3. Skripsi\Aplikasi\MaccaMart\MaccaMart\obj\Debug\MaccaMart.exe
+D:\File\Skripsi\3. Skripsi\Aplikasi\MaccaMart\MaccaMart\obj\Debug\MaccaMart.pdb

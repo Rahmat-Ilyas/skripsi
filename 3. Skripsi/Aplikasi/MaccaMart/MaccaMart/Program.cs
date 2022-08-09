@@ -23,7 +23,7 @@ namespace MaccaMart
 
             while (reader.Read())
             {
-                Console.WriteLine(reader.GetString(0));
+                // Console.WriteLine(reader.GetString(0));
             }
 
             Application.EnableVisualStyles();
