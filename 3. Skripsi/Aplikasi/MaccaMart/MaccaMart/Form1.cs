@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Npgsql;
+using System;
 using System.Windows.Forms;
-using Npgsql;
+using System.Data;
+using System.Linq;
 
 namespace MaccaMart
 {
@@ -29,14 +23,42 @@ namespace MaccaMart
             var cmd = new NpgsqlCommand(sql, conn);
 
             NpgsqlDataReader reader = cmd.ExecuteReader();
+            DataTable dt = new DataTable();
+            string[] arrray = dt.Rows.OfType<DataRow>().Select(k => k[0].ToString()).ToArray();
+            dt.Load(reader);
+            dataGridView1.DataSource = dt;
 
-            Console.WriteLine(reader.Read());
-
-            while (reader.Read())
+            foreach (var item in arrray)
             {
-                Console.WriteLine(reader.GetString(0));
+                Console.WriteLine(item.ToString());
             }
+            //Console.WriteLine(reader.Read());
 
+            //String[] myArray;
+            //String myJSON = "";
+            //int i = 0;
+            //while (reader.Read())
+            //{
+            //    //myArray = reader.GetValues();
+            //    // myArray = new string[] reader.GetValues();
+            //    // double[] myArray = (double[])reader.GetValue(0);
+            //    myJSON += "{";
+            //    for (int idx = 0; idx < reader.FieldCount; idx++)
+            //    {
+            //        myArray = (String[])reader.GetValue(0);
+            //        // Console.Write(reader.GetName(idx) + " => " + reader[idx]);
+            //        // arrayKu[i] = "ds";
+            //        myJSON += '"' + reader.GetName(idx) + '"' + " : " + '"' + reader[idx] + '"' + ',';
+            //        // termsList.Add(reader.GetName(idx));
+            //    }
+            //    myJSON += "}, ";
+            //    // Console.WriteLine();
+
+            //    i++;
+            //}
+
+            //String[] terms = termsList.ToArray();
+            // Console.WriteLine(myJSON);
             //var client = new HttpClient();
             //var endpoint = new Uri("");
         }
