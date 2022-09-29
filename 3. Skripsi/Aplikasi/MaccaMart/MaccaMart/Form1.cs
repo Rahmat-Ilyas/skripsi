@@ -23,39 +23,41 @@ namespace MaccaMart
             var cmd = new NpgsqlCommand(sql, conn);
 
             NpgsqlDataReader reader = cmd.ExecuteReader();
-            DataTable dt = new DataTable();
+
+            /*DataTable dt = new DataTable();
             string[] arrray = dt.Rows.OfType<DataRow>().Select(k => k[0].ToString()).ToArray();
             dt.Load(reader);
-            dataGridView1.DataSource = dt;
+            dataGridView1.DataSource = dt;*/
 
-            foreach (var item in arrray)
-            {
-                Console.WriteLine(item.ToString());
-            }
+            //foreach (var item in arrray)
+            //{
+            //    Console.WriteLine("OK");
+            //}
+
             //Console.WriteLine(reader.Read());
 
-            //String[] myArray;
+            String[] myArray;
             //String myJSON = "";
-            //int i = 0;
-            //while (reader.Read())
-            //{
-            //    //myArray = reader.GetValues();
-            //    // myArray = new string[] reader.GetValues();
-            //    // double[] myArray = (double[])reader.GetValue(0);
-            //    myJSON += "{";
-            //    for (int idx = 0; idx < reader.FieldCount; idx++)
-            //    {
-            //        myArray = (String[])reader.GetValue(0);
-            //        // Console.Write(reader.GetName(idx) + " => " + reader[idx]);
-            //        // arrayKu[i] = "ds";
-            //        myJSON += '"' + reader.GetName(idx) + '"' + " : " + '"' + reader[idx] + '"' + ',';
-            //        // termsList.Add(reader.GetName(idx));
-            //    }
-            //    myJSON += "}, ";
-            //    // Console.WriteLine();
+            int i = 0;
+            while (reader.Read())
+            {
+                // myArray = reader.GetValues();
+                // myArray = new string[] reader.GetValues();
+                // double[] myArray = (double[])reader.GetValue(0);
+                //myJSON += "{";
+                for (int idx = 0; idx < reader.FieldCount; idx++)
+                {
+                    //myArray = (String[])reader.GetValue(0);
+                    // Console.Write(reader.GetName(idx) + " => " + reader[idx]);
+                    // arrayKu[i] = "ds";
+                    //myJSON += '"' + reader.GetName(idx) + '"' + " : " + '"' + reader[idx] + '"' + ',';
+                    // termsList.Add(reader.GetName(idx));
+                }
+                //myJSON += "}, ";
+                // Console.WriteLine();
 
-            //    i++;
-            //}
+                i++;
+            }
 
             //String[] terms = termsList.ToArray();
             // Console.WriteLine(myJSON);
