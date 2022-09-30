@@ -27,15 +27,15 @@
                 left: 50%;
                 top: 45%;
                 transform: translate(-50%,-50%);
-                font: 14px arial;
+                font: 18px;
             }
             .progres {
                 width: 45%;
                 position: relative;
                 left: 50%;
-                top: 53%;
+                top: 51%;
                 transform: translate(-50%,-50%);
-                font-size: 12px;
+                font-size: 14px;
             }
         </style>
     </head>
@@ -101,11 +101,8 @@
                 <span class="sr-only">Loading...</span>
             </div>
         </div>
-        <div class="progres">
+        <div class="progres text-center">
             <span>Mengsinkronkan data...</span>
-            <div class="progress" style="height: 10px; margin-bottom: 3px;">
-                <div class="progress-bar" role="progressbar" style="width: 0%;">0%</div>
-            </div>
         </div>
     </div>
     <script>
@@ -131,50 +128,47 @@
                 e.preventDefault();
 
                 $(".preloader").fadeIn("slow");
-                $('.progress-bar').text('20%').css('width', '20%');
 
+                pushData();
+            });
+
+            function pushData() {
                 $.ajax({
                     type: "GET",
-                    url: url + "/get-last-date",
+                    url: url + "/get-count-data",
                     headers: headers,
                     crossDomain: true,
                     dataType: "json",
                     data: {},
-                    success: function (date) {
+                    success: function (data) {
                         $.ajax({
                             type: "POST",
                             url: "controller.php",
                             dataType: "json",
                             data: {
                                 get_data: true,
-                                date: date,
+                                data: data,
                             },
                             success: function (data) {
+                                var loop = data.loop;
                                 $.ajax({
                                     type: "POST",
                                     url: url + "/sinkron",
                                     headers: headers,
                                     crossDomain: true,
                                     dataType: "json",
-                                    data: JSON.stringify(data),
-                                    xhr: function() {
-                                        var xhr = $.ajaxSettings.xhr();
-                                        xhr.upload.onprogress = function(e) {
-                                            if (e.lengthComputable) {
-                                                var percentComplete = e.loaded / e.total;
-                                                var progress = Math.round(percentComplete * 100);
-                                                $('.progress-bar').text(progress + '%').css('width', progress+'%');
-                                            }
-                                        };
-                                        return xhr;
-                                    },
-                                    success: function (data, status, jqXHR) {
-                                        $(".preloader").fadeOut("slow");
-                                        toastr.success("Sinkronisasi berhasil dilakukan pada <?= date('d/m/Y H:i') ?>");
-                                        getData();
+                                    data: JSON.stringify(data.data),
+                                    success: function (datax, status, jqXHR) {
+                                        if (loop) {
+                                            pushData()
+                                        } else {   
+                                            $(".preloader").fadeOut("slow");
+                                            toastr.success("Sinkronisasi berhasil dilakukan pada <?= date('d/m/Y H:i') ?>");
+                                            getData();
+                                        }
                                     },
                                     error: function (jqXHR, status) {
-                                        toastr.success("Sinkronisasi tidak berhasil. Terjadi kesalahan");
+                                        toastr.error("Sinkronisasi tidak berhasil. Terjadi kesalahan");
                                         $(".preloader").fadeOut("slow");
                                     }
                                 });
@@ -182,7 +176,7 @@
                         });                           
                     }
                 });
-            });
+            }
 
             function getData() {
                 $.ajax({
@@ -193,7 +187,7 @@
                     dataType: "json",
                     data: {},
                     success: function (data, status, jqXHR) {
-                        if (data) {
+                        if (data.length > 0) {
                             var htmldata = '';
                             var no = 1;
                             $.each(data, function(key, val) {
