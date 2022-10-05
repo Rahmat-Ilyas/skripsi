@@ -140,7 +140,7 @@
                     crossDomain: true,
                     dataType: "json",
                     data: {},
-                    success: function (data) {
+                    success: function (data, status, jqXHR) {
                         $.ajax({
                             type: "POST",
                             url: "controller.php",
