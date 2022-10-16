@@ -117,6 +117,7 @@
             $(".preloader").hide();
 
             var url = "http://macca-mart.com/api";
+            // var url = "https://macca-mart.cfg.my.id/api";
             var headers = {
                 "Authorization": "Bearer ftFN0jVwPHnzuuraiUwnyKafrd2dcErZHzYW3IHlSBFw0Ak0lTp9DwCoV1XiuwwNCJCGhFJD9uxisvQE",
                 "Content-Type": "application/json; charset=utf-8",
