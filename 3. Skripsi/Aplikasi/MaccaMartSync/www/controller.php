@@ -49,7 +49,7 @@ if (isset($_POST['get_data'])) {
 
 	// Push Data
 	$limit1 = 5000;
-	$limit2 = 30000;
+	$limit2 = 10000;
 	$tbl_item = false;
 	$tbl_itemjenis = false;
 	$tbl_itemstok = false;
